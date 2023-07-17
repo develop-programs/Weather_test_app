@@ -75,7 +75,7 @@ function Current() {
           >
             <Typography variant="body1" color="inherit" fontWeight={600}>
               <img
-                src={`https://${Data?.WeatherReport?.data?.current?.condition?.icon}`}
+                src={`http://${Data?.WeatherReport?.data?.current?.condition?.icon}`}
                 width={130}
               />
             </Typography>
@@ -115,7 +115,6 @@ function Current() {
               alignItems="center"
             >
               <CalendarTodayIcon fontSize="small" />
-              &nbsp;
               {Data?.WeatherReport?.data?.location?.localtime}
             </Typography>
             <Typography
@@ -126,7 +125,7 @@ function Current() {
               alignItems="center"
             >
               <LocationOnIcon fontSize="small" />{" "}
-              {Data?.WeatherReport?.data?.location?.name},
+              {Data?.WeatherReport?.data?.location?.name}
               {Data?.WeatherReport?.data?.location?.region}
             </Typography>
           </Typography>
