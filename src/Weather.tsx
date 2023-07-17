@@ -12,7 +12,7 @@ function Weather() {
         overflowY: "auto",
       }}
     >
-      <Container maxWidth="md" sx={{  paddingTop:10 }}>
+      <Container maxWidth="md" sx={{ marginTop: 8, paddingY: 2 }}>
         <Search />
         <Current />
         <Forecast />

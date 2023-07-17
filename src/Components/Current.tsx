@@ -68,9 +68,10 @@ function Current() {
           <Typography
             variant="body1"
             color="inherit"
-            padding={2}
+            paddingY={2}
+            paddingX={1}
             display="flex"
-            gap={4}
+            gap={2}
             alignItems="center"
           >
             <Typography variant="body1" color="inherit" fontWeight={600}>
@@ -83,8 +84,7 @@ function Current() {
               variant="body1"
               color="inherit"
               fontSize={{
-                xs: 40,
-                sm: 50,
+                xs: 50,
                 lg: 80,
               }}
               fontWeight={600}
@@ -103,14 +103,15 @@ function Current() {
           <Typography
             variant="body1"
             color="inherit"
-            padding={2}
+            paddingY={2}
             display={{ xs: "block", md: "flex" }}
             justifyContent="space-between"
           >
             <Typography
               variant="body1"
               color="inherit"
-              padding={2}
+              paddingY={2}
+              paddingX={1}
               display="flex"
               alignItems="center"
             >
@@ -120,7 +121,8 @@ function Current() {
             <Typography
               variant="body1"
               color="inherit"
-              padding={2}
+              paddingY={2}
+              paddingX={1}
               display="flex"
               alignItems="center"
             >
