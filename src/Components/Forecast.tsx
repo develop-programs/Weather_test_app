@@ -37,7 +37,7 @@ export default function Forecast() {
                 justifyContent="center"
                 alignItems="center"
               >
-                <img src={`http://${itm.day.condition.icon}`} width={130} />
+                <img src={`https://${itm.day.condition.icon}`} width={130} />
               </Typography>
               <Typography
                 variant="body1"

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchData = createAsyncThunk("Weather/Data", async (params: any) => {
-    const response = await axios.get("http://api.weatherapi.com/v1/forecast.json?key=4e51732bd7d9449b9ec40408233006&q=" + params.coords.latitude + "," + params.coords.longitude + "&days=3&aqi=no")
+    const response = await axios.get("https://api.weatherapi.com/v1/forecast.json?key=4e51732bd7d9449b9ec40408233006&q=" + params.coords.latitude + "," + params.coords.longitude + "&days=3&aqi=no")
     return await response.data
 })
 export const WeatherData = createSlice(
