@@ -125,7 +125,7 @@ function Current() {
               alignItems="center"
             >
               <LocationOnIcon fontSize="small" />{" "}
-              {Data?.WeatherReport?.data?.location?.name}
+              {Data?.WeatherReport?.data?.location?.name},
               {Data?.WeatherReport?.data?.location?.region}
             </Typography>
           </Typography>
