@@ -76,7 +76,7 @@ function Current() {
           >
             <Typography variant="body1" color="inherit" fontWeight={600}>
               <img
-                src={`http://${Data?.WeatherReport?.data?.current?.condition?.icon}`}
+                src={`https://${Data?.WeatherReport?.data?.current?.condition?.icon}`}
                 width={130}
               />
             </Typography>
