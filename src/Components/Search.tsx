@@ -1,4 +1,4 @@
-import { Paper, Typography, Input, IconButton } from "@mui/material";
+import { Paper, Typography, Input, IconButton, Tooltip } from "@mui/material";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
@@ -22,7 +22,7 @@ function Search() {
     <Paper
       elevation={5}
       sx={{
-        borderRadius: 20,
+        borderRadius: 10,
         paddingX: 2,
         paddingY: 1,
         display: "flex",
@@ -53,15 +53,18 @@ function Search() {
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               dispatch(fetchSearchData(Value));
+              setValue("")
             }
           }}
         />
       </Typography>
 
       <Typography variant="body1" color="inherit" component="div">
-        <IconButton onClick={CurrentWeather}>
-          <MyLocationIcon />
-        </IconButton>
+        <Tooltip title="Current Location">
+          <IconButton onClick={CurrentWeather}>
+            <MyLocationIcon />
+          </IconButton>
+        </Tooltip>
       </Typography>
     </Paper>
   );

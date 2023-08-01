@@ -5,12 +5,13 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { fetchData } from "./Redux/Reducers/Weather";
 import { AppDispatch } from "./Redux/store";
 import ScreenLoader from "./Components/Loader";
-
+import { FaSun, FaMoon } from "react-icons/fa"
 function App() {
+  const Data = useSelector((state: any) => state);
   const [ChangeTheme, setTheme] = React.useState(true);
   const [Loader, setLoader] = React.useState(true);
   const dispatch = useDispatch<AppDispatch>();
@@ -57,20 +58,37 @@ function App() {
                   variant="body1"
                   color="inheritl"
                   display="flex"
-                  justifyContent="flex-end"
+                  justifyContent="space-between"
                   gap={2}
                   sx={{ flexGrow: 1 }}
                 >
-                  <IconButton
-                    onClick={() => {
-                      setTheme(!ChangeTheme);
-                    }}
-                  >
-                    {ChangeTheme ? <LightModeIcon /> : <DarkModeIcon />}
-                  </IconButton>
-                  <IconButton href="https://github.com/develop-programs/Weather_test_app.git">
-                    <GitHubIcon />
-                  </IconButton>
+                  <Typography variant="body1" color="inherit">
+                    {Data?.WeatherReport?.data?.forecast?.forecastday?.slice(0, 1).map(
+                      (itm: any, idk: any) => (
+                        <Box key={idk} sx={{ display: 'flex', gap: 2 }}>
+                          <Typography variant="body1" color="inherit" display="flex" alignItems="center" gap={1}>
+                            <FaSun />
+                            {itm.astro.sunrise}
+                          </Typography>
+                          <Typography variant="body1" color="inherit" display="flex" alignItems="center" gap={1}>
+                            <FaMoon />
+                            {itm.astro.sunset}
+                          </Typography>
+                        </Box>
+                      ))}
+                  </Typography>
+                  <Typography variant="body1" color="inherit">
+                    <IconButton
+                      onClick={() => {
+                        setTheme(!ChangeTheme);
+                      }}
+                    >
+                      {ChangeTheme ? <LightModeIcon /> : <DarkModeIcon />}
+                    </IconButton>
+                    <IconButton href="https://github.com/develop-programs/Weather_test_app.git">
+                      <GitHubIcon />
+                    </IconButton>
+                  </Typography>
                 </Typography>
               </Toolbar>
             </AppBar>

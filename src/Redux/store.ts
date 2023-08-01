@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import Weather from './Reducers/Weather'
 import TempConvertor from './Reducers/convertor'
 import WeatherSearchData from './Reducers/Search'
+import Switch from './Reducers/switch'
 
 export const store = configureStore({
   reducer: {
     WeatherReport: Weather,
     convert: TempConvertor,
-    WeatherSearch: WeatherSearchData
+    WeatherSearch: WeatherSearchData,
+    switch: Switch
   },
 })
 

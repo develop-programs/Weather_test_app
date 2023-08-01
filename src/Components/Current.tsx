@@ -10,6 +10,7 @@ import { WiHumidity } from "react-icons/wi";
 import { useSelector, useDispatch } from "react-redux";
 import { convert } from "../Redux/Reducers/convertor";
 import { AppDispatch } from "../Redux/store";
+import moment from "moment";
 
 function Current() {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,7 +18,7 @@ function Current() {
   return (
     <Paper
       sx={{
-        marginTop: 4,
+        marginTop: 2,
         borderRadius: 2,
         padding: 2,
       }}
@@ -115,8 +116,8 @@ function Current() {
               display="flex"
               alignItems="center"
             >
-              <CalendarTodayIcon fontSize="small" />
-              {Data?.WeatherReport?.data?.location?.localtime}
+              <CalendarTodayIcon fontSize="small" /> &nbsp;
+              {moment(Data?.WeatherReport?.data?.location?.localtime).format("YYYY-MM-D  hh:mm a")}
             </Typography>
             <Typography
               variant="body1"
