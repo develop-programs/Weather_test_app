@@ -1,4 +1,4 @@
-import { Button, Divider, Paper, Typography } from "@mui/material";
+import { Button, Divider, Paper, Typography, Tooltip } from "@mui/material";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
@@ -18,8 +18,14 @@ export default function Forecast() {
         sx={{ flexGrow: 1, display: "flex" }}
         gap={2}
       >
-        <Button type="button" variant="contained" onClick={() => { dispatch(switchval()) }}>Forecast</Button>
-        <Button type="button" variant="contained" onClick={() => { dispatch(switchval()) }}>Daily</Button>
+        {Data.switch.value ? <>
+          <Tooltip title="Click to See Daily Weather">
+            <Button type="button" onClick={() => { dispatch(switchval()) }}>Daily</Button>
+          </Tooltip>
+        </> : <>
+          <Tooltip title="Click to See Forecast Weather">
+            <Button type="button" onClick={() => { dispatch(switchval()) }}>Forecast</Button>
+          </Tooltip>        </>}
       </Typography>
       {Data.switch.value ? <>
         <Typography variant="body1" color="inherit" sx={{ flexGrow: 1, display: { xs: 'grid', sm: 'flex' }, alignContent: 'center', justifyContent: 'space-evenly', marginTop: 2 }}>
